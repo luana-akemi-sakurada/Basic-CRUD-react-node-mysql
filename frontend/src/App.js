@@ -6,13 +6,12 @@ import {
 } from "react-router-dom";
 
 import Users from "./pages/Users";
-import Add from "./pages/Add";
-import Update from "./pages/Update";  
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Dashboard from './pages/Dashboard';
 import PrivateRoute from './pages/PrivateRoute';
 import { AuthProvider } from './context/AuthContext';
+import UpdateAccount from './pages/UpdateAccount';
 
 function App() {
   return (
@@ -22,15 +21,23 @@ function App() {
         <BrowserRouter>
           <Routes>
             <Route path="/users" element={<Users />} />
-            <Route path="/add" element={<Add />} />
-            <Route path="/update/:id" element={<Update />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
+
             <Route 
               path="/dashboard" 
               element={
                 <PrivateRoute>
                   <Dashboard />
+                </PrivateRoute>
+              } 
+            />
+
+            <Route 
+              path="/update-account" 
+              element={
+                <PrivateRoute>
+                  <UpdateAccount />
                 </PrivateRoute>
               } 
             />

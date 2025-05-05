@@ -28,6 +28,10 @@ function Dashboard() {
     }
   };
   
+  const handleUpdateAccount = () => {
+    navigate('/update-account');
+  };
+  
   return (
     <div>
       <h2>Dashboard</h2>
@@ -39,6 +43,7 @@ function Dashboard() {
       </div>
       
       <button onClick={handleLogout}>Logout</button>
+      <button onClick={handleUpdateAccount}>Update Account</button>
       <button onClick={handleDeleteAccount}>Delete Account</button>
     </div>
   );
